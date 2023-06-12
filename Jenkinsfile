@@ -3,7 +3,7 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-                bat 'mkdir  test' 
+                bat 'mkdir  test2' 
                 } 
             } 
             stage('Test') { 
