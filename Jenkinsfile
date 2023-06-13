@@ -17,4 +17,13 @@ pipeline {
                 } 
             } 
         }
-    }
+     post{
+           always {
+                robot disableArchiveOutput: false, outputFileName: 'dryrun.xml', outputPath: 'outputdir', passThreshold: 100.0, unstableThreshold: 99.0
+           }
+           success {
+                cleanWs()
+            }
+       }   
+}
+
