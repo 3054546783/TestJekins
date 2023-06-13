@@ -15,7 +15,13 @@ pipeline {
                 steps { 
                     echo 'Deploying....' 
                 } 
-            } 
+            }
+         stage('run-dryrun') {
+            steps {
+                echo 'run dryrun.'
+				bat 'python.exe run.py -e not-ready --dryrun -d ./results'
+            }
+        }
         }
      post {
             always {
