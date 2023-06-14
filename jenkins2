@@ -20,7 +20,8 @@ pipeline {
         }
      post {
             always {
-                archiveArtifacts artifacts: 'results/*.*', fingerprint: true
+		step([$class: 'RobotPublisher', outputPath:'results/*.*', passThreshold: 100, unstableThreshold: 0])
+  
             }
         }
 }
