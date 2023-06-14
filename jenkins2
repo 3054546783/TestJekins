@@ -20,7 +20,7 @@ pipeline {
         }
      post {
             always {
-		step([$class: 'RobotPublisher', outputPath:'results/*.*', passThreshold: 100, unstableThreshold: 0])
+		robot outputPath: 'results', logFileName: 'log.html', outputFileName: 'output.xml', reportFileName: 'report.hml', passThreshold: 100, unstableThreshold: 75.0
   
             }
         }
