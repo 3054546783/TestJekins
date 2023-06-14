@@ -14,7 +14,7 @@ pipeline {
          stage('run-dryrun') {
             steps {
                 echo 'run dryrun.'
-				bat 'robot -d ./results test.robot'
+		sh 'robot -d ./results test.robot'
             }
         }
         }
